@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import Navbar from './components/Navbar';
+import Hero3D from './components/Hero3D';
 import WeatherDashboard from './components/WeatherDashboard';
 import FarmingInfo from './components/FarmingInfo';
 import Footer from './components/Footer';
@@ -118,7 +119,7 @@ const STRINGS = {
       locationHint: 'तुमच्या स्थानानुसार',
     },
     features: {
-      pestDetector: { title: 'किड नियंत्रण', desc: 'कंप्यूटर व्हिजनने किड ओळखा आणि उपाय.' },
+      pestDetector: { title: 'קिड नियंत्रण', desc: 'कंप्यूटर व्हिजनने किड ओळखा आणि उपाय.' },
       marketplace: { title: 'बाजारपेठ', desc: 'शेती इनपुट व उत्पादनांची खरेदी-विक्री.' },
       labor: { title: 'मजूर संपर्क', desc: 'कुशल मजूर व तज्ञ शोधा.' },
     },
@@ -140,33 +141,7 @@ export default function App() {
       <Navbar lang={lang} setLang={setLang} t={t} />
 
       <main>
-        <section className="bg-gradient-to-b from-emerald-50 to-transparent">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
-                  AgroSense — {t('hero.title')}
-                </h1>
-                <p className="mt-3 text-gray-600 max-w-prose">
-                  {t('hero.subtitle')}
-                </p>
-                <div className="mt-6">
-                  <a href="#weather" className="inline-flex rounded-lg bg-emerald-600 px-5 py-3 text-white font-medium shadow hover:bg-emerald-700">
-                    {t('hero.cta')}
-                  </a>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <div className="aspect-[4/3] w-full rounded-lg bg-gradient-to-br from-emerald-100 via-white to-emerald-50 flex items-center justify-center">
-                    <span className="text-emerald-700 text-sm">AgroSense — Smart Farming Assistant</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <Hero3D t={t} />
         <WeatherDashboard t={t} />
         <FarmingInfo t={t} />
       </main>
